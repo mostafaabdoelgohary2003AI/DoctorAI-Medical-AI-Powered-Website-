@@ -1,2 +1,4 @@
 models/*.tflite filter=lfs diff=lfs merge=lfs -text
 models/skin_cancer/DEPI_SKIN_CANCER_MODEL.h5 filter=lfs diff=lfs merge=lfs -text
+models/palm_disease/XGB-Tuned-balancedPalm.pkl filter=lfs diff=lfs merge=lfs -text
+models/tokenizer.pkl filter=lfs diff=lfs merge=lfs -text
