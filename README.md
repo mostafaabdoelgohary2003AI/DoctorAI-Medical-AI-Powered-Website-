@@ -212,14 +212,21 @@ Update VITE_API_URL in the frontend to the Azure backend URL.
 
 ### Team Members:
 
-- 👩‍💻 [Your Name] - Backend Developer
-- 👨‍💻 [Team Member 2] - Frontend Developer
-- 👩‍🔬 [Team Member 3] - Machine Learning Engineer
+- 👑 **Mostafa Abdo** - Lead Developer
+  - AI Developer
+  - Full Stack Developer
+  - MLOps Engineer
+- 💬 **Menna Ateya** - Chatbot Developer
+- 🔧 **Adel Mahmoud** - AI Developer
+- 🧠 **Yousef Alaa** - AI Developer
+- 🤖 **Mohamed Osama** - AI Developer
+- 📊 **Mohamed Ahmed Talba** - AI Developer
 
 ### Acknowledgments:
 
 - Thanks to DEPI AI for the project opportunity.
 - Special thanks to our instructor for guidance.
+
 
 ## 📜 License
 
