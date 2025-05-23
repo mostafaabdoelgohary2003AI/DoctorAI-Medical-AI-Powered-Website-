@@ -6,6 +6,8 @@ An AI-powered medical diagnosis system built for DEPI AI Web Application project
 
 DoctorAI is a web application that leverages AI to assist with medical diagnoses. It integrates multiple machine learning models to analyze medical images and provide insights on conditions like bone fractures, skin cancer, and more. Built with FastAPI (backend) and React (frontend), it offers a user-friendly interface for healthcare professionals and patients.
 
+<div id="1747963956071" style="width:100%;max-width:700px;height:525px;margin:auto;display:block;position: relative;border:2px solid #dee1e5;border-radius:3px;"><iframe allow="clipboard-write" allow="autoplay" allowfullscreen="true" allowfullscreen="true" style="width:100%;height:100%;border:none;" src="https://app.presentations.ai/view/jDywQi" scrolling="no"></iframe></div>
+
 ## ✨ Features
 
 - 🩻 **Image-Based Diagnosis**: Analyze X-rays, MRIs, and skin images for conditions like bone fractures, lung cancer, monkeypox, skin cancer, brain tumors, and pneumonia.
