@@ -12,7 +12,7 @@ DoctorAI is a web application that leverages AI to assist with medical diagnoses
 
 - 🩻 **Image-Based Diagnosis**: Analyze X-rays, MRIs, and skin images for conditions like bone fractures, lung cancer, monkeypox, skin cancer, brain tumors, and pneumonia.
 - 💬 **Chatbot**: A medical chatbot to provide preliminary advice based on user symptoms.
-- 🌴 **Palm Disease Detection**: Diagnose palm tree diseases using XGBoost.
+- 🖐️ **Anemia Detection**: Diagnose anemia using palm images with XGBoost.
 - 🔒 **Secure Authentication**: JWT-based authentication for secure access.
 - 🚀 **Scalable Backend**: Built with FastAPI, Redis caching, and Docker for efficient performance.
 
@@ -49,7 +49,7 @@ Ensure the models/ directory contains:
 
 - bone_fracture.tflite, lung_colon.tflite, monkeypox.tflite, tumor.tflite, xray.tflite, chatbot.tflite
 - skin_cancer/DEPI_SKIN_CANCER_MODEL.h5 (not converted to TFLite)
-- palm_disease/XGB-Tuned-balancedPalm.pkl
+- anemia_detection/XGB-Tuned-balancedPalm.pkl
 - tokenizer.pkl
 
 ### 3. Set Up the Backend
@@ -134,23 +134,23 @@ Log in with the default credentials:
 }
 ```
 
-### 4. Palm Disease Detection
+### 4. Anemia Detection
 
-- Navigate to the palm disease section.
-- Input features (e.g., leaf color, texture).
-- Get the diagnosis.
+- Navigate to the anemia detection section.
+- Upload a palm image or input extracted features from the palm.
+- Get the anemia diagnosis.
 
 **Example:**
 
 ```json
-# POST /api/palm_disease
+# POST /api/anemia_detection
 [
-  0.5, 0.3, 0.2, 0.1, 0.4  // Example feature values
+  0.5, 0.3, 0.2, 0.1, 0.4  // Example palm image features
 ]
 
 # Response:
 {
-  "result": "Fusarium Wilt",
+  "result": "Anemia Detected",
   "confidence": 0.87
 }
 ```
