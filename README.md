@@ -356,14 +356,15 @@ Full interactive API documentation is available at:
 
 ### **Core Development Team**
 - 👑 **Mostafa Abdo** - Lead Developer & Architecture
+  - AI Developer 
   - Full Stack Development
   - MLOps & Infrastructure
   - Security Implementation
-- 💬 **Menna Ateya** - Chatbot Specialist
-- 🔧 **Adel Mahmoud** - AI Model Development
+- 💬 **Menna Ateya** - Chatbot Developer
+- 🔧 **Adel Mahmoud** - AI Developer
 - 🧠 **Yousef Alaa** - Machine Learning Engineer
-- 🤖 **Mohamed Osama** - AI Model Optimization
-- 📊 **Mohamed Ahmed Talba** - Data Science & Analytics
+- 🤖 **Mohamed Osama** - AI Developer
+- 📊 **Mohamed Ahmed Talba** - AI Developer
 
 ### **Special Thanks**
 - 🎓 **DEPI AI Program** for the educational opportunity
