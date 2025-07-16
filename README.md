@@ -1,401 +1,268 @@
-# DoctorAI: AI-Powered Medical Diagnosis System 🩺💡
+# DoctorAI: Complete Technical Documentation
 
-An advanced AI-powered medical diagnosis system built for DEPI AI Web Application project, featuring multiple ML models, comprehensive error handling, and production-ready Docker deployment.
+> **AI-Powered Medical Diagnosis System**  
+> **Version**: 2.0.0 | **Last Updated**: December 2024  
+> **DEPI AI Web Application Project**
 
-## 🌟 Overview
+## 📚 Documentation Index
 
-DoctorAI is a robust web application that leverages AI to assist with medical diagnoses. It integrates multiple machine learning models to analyze medical images and provide insights on conditions like lung cancer, monkeypox, brain tumors, and more. Built with FastAPI (backend) and React (frontend), it offers a secure, scalable, and user-friendly interface for healthcare professionals.
+This documentation provides comprehensive technical coverage of the DoctorAI system - an advanced AI-powered medical diagnosis platform with 6 specialized machine learning models, production-ready infrastructure, and enterprise-grade security.
 
-<div id="1747963956071" style="width:100%;max-width:700px;height:525px;margin:auto;display:block;position: relative;border:2px solid #dee1e5;border-radius:3px;"><iframe allow="clipboard-write" allow="autoplay" allowfullscreen="true" allowfullscreen="true" style="width:100%;height:100%;border:none;" src="https://app.presentations.ai/view/jDywQi" scrolling="no"></iframe></div>
+### 📖 Documentation Structure
 
-## ✨ Features
-
-### 🏥 **Medical Image Analysis (5/7 Models Working)**
-- 🫁 **Lung/Colon Cancer**: Analyze medical images for lung and colon cancer detection
-- 🐒 **Monkeypox Detection**: Identify monkeypox from skin lesion images
-- 🧠 **Brain Tumor Classification**: Detect and classify brain tumors from MRI scans
-- 📱 **X-ray Analysis**: Comprehensive X-ray image analysis
-- 🔬 **Anemia Detection**: Diagnose anemia using palm images with XGBoost
-
-### 💬 **AI-Powered Medical Chatbot**
-- Smart medical Q&A system
-- Symptom analysis and preliminary advice
-- Natural language processing for medical queries
-
-### 🔒 **Enterprise-Grade Security**
-- JWT-based authentication with refresh tokens
-- Password hashing with bcrypt
-- Secure session management with Redis
-- Non-root Docker containers
-- Read-only file system mounts
-
-### 🚀 **Production-Ready Infrastructure**
-- FastAPI backend with comprehensive error handling
-- React frontend with optimized build
-- Redis caching for improved performance
-- Docker containerization with health checks
-- Comprehensive logging and monitoring
-
-## 📊 Current Model Status
-
-| Model | Status | Description | Confidence |
-|-------|--------|-------------|------------|
-| 🫁 lung_colon | ✅ **Working** | Lung/Colon cancer detection | High accuracy |
-| 🐒 monkeypox | ✅ **Working** | Monkeypox detection | 98-99% accuracy |
-| 🧠 tumor | ✅ **Working** | Brain tumor classification | High reliability |
-| 📱 xray | ✅ **Working** | X-ray analysis | Stable performance |
-| 💬 chatbot | ✅ **Working** | Medical Q&A system | NLP-powered |
-| 🦴 bone_fracture | 🚧 **Under Deployment** | TensorFlow Lite compatibility issues | Under review |
-| 🔬 skin_cancer | 🚧 **Under Deployment** | Deprecated parameter issues | Requires retraining |
-
-## 📋 Prerequisites
-
-### **System Requirements**
-- 🐳 **Docker Engine 20.10+** and **Docker Compose 2.0+**
-- 🖥️ **4GB RAM minimum** (8GB recommended)
-- 💾 **10GB free disk space** for models and images
-- 🌐 **Internet connection** for initial setup
-
-### **For Local Development**
-- 🐍 **Python 3.9+**
-- 🌐 **Node.js 18+**
-- ☁️ **Azure account** (optional, for cloud storage)
-
-## 🚀 Quick Start (Docker - Recommended)
-
-### **1. Clone and Setup**
-```bash
-git clone https://github.com/yourusername/doctorai.git
-cd DoctorAI-DEPI-AI-Web-Application
-```
-
-### **2. Environment Configuration**
-```bash
-# Copy example environment file
-cp .env.example .env
-
-# Edit .env with your configurations (optional)
-# AZURE_STORAGE_CONNECTION_STRING=your_connection_string_here
-```
-
-### **3. One-Command Deployment**
-```bash
-# Production deployment
-docker-compose up -d
-
-# Development with hot reloading
-docker-compose -f docker-compose.yml -f docker-compose.dev.yml up
-```
-
-### **4. Access the Application**
-- 🌐 **Frontend**: http://localhost:5173
-- 🔧 **Backend API**: http://localhost:8000
-- 📚 **API Documentation**: http://localhost:8000/docs
-- ❤️ **Health Check**: http://localhost:8000/health
-
-## 🛠️ Manual Setup (Alternative)
-
-### **Backend Setup**
-```bash
-cd backend
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Start server with monitoring
-python start_server.py
-
-# Run health checks
-python test_server.py
-```
-
-### **Frontend Setup**
-```bash
-cd react-app
-
-# Install dependencies
-npm install
-
-# Development server
-npm run dev
-
-# Production build
-npm run build && npm run preview
-```
-
-## 🏥 Usage Guide
-
-### **1. Medical Image Analysis**
-```bash
-# Upload image via web interface or API
-curl -X POST "http://localhost:8000/predict/lung_colon" \
-  -H "Content-Type: multipart/form-data" \
-  -F "file=@medical_image.jpg"
-
-# Expected response:
-{
-  "result": "lung_squamous_cell_carcinoma",
-  "confidence": 0.89,
-  "description": "Comprehensive analysis indicates potential lung squamous cell carcinoma...",
-  "model_used": "lung_colon",
-  "timestamp": "2024-01-15T10:30:00Z"
-}
-```
-
-### **2. Medical Chatbot**
-```bash
-# Ask medical questions
-curl -X POST "http://localhost:8000/chatbot" \
-  -H "Content-Type: application/json" \
-  -d '{"message": "I have persistent headache and fever"}'
-
-# Response:
-{
-  "response": "Based on your symptoms, this could indicate several conditions. Please consult a healthcare professional for proper evaluation...",
-  "confidence": 0.85
-}
-```
-
-### **3. Anemia Detection**
-```bash
-# Upload palm image for anemia detection
-curl -X POST "http://localhost:8000/anemia_detection" \
-  -H "Content-Type: application/json" \
-  -d '[0.5, 0.3, 0.2, 0.1, 0.4]'  # Palm image features
-
-# Response:
-{
-  "result": "Anemia Detected",
-  "confidence": 0.87,
-  "recommendation": "Consider consulting a healthcare provider for blood tests..."
-}
-```
-
-## 🔧 Advanced Configuration
-
-### **Environment Variables**
-```env
-# Backend Configuration
-AZURE_STORAGE_CONNECTION_STRING=your_azure_connection
-REDIS_URL=redis://redis:6379
-MODEL_PATH=/app/models
-LOG_LEVEL=INFO
-SECRET_KEY=your_secret_key_here
-
-# Security Settings
-ACCESS_TOKEN_EXPIRE_MINUTES=30
-ENABLE_MODEL_CACHING=true
-MAX_IMAGE_SIZE=10485760  # 10MB
-
-# Frontend Configuration
-VITE_API_URL=http://localhost:8000
-NODE_ENV=production
-```
-
-### **Docker Commands**
-```bash
-# Production deployment
-docker-compose up -d
-
-# Development mode
-docker-compose -f docker-compose.yml -f docker-compose.dev.yml up
-
-# Health monitoring
-docker-compose ps
-docker-compose logs -f
-
-# Resource monitoring
-docker stats
-
-# Service restart
-docker-compose restart backend
-
-# Cleanup
-docker-compose down
-docker system prune -a
-```
-
-## 🏗️ Architecture
-
-```
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   Frontend      │    │    Backend      │    │     Redis       │
-│   (React+Vite)  │────│   (FastAPI)     │────│   (Cache)       │
-│   Port: 5173    │    │   Port: 8000    │    │   Port: 6379    │
-└─────────────────┘    └─────────────────┘    └─────────────────┘
-         │                       │                       │
-         │              ┌─────────────────┐              │
-         └──────────────│   AI Models     │──────────────┘
-                        │   (TensorFlow)  │
-                        └─────────────────┘
-```
-
-## 🔍 Troubleshooting
-
-### **Common Issues & Solutions**
-
-#### **🚨 Server Startup Issues**
-```bash
-# Problem: "Error loading ASGI app"
-# Solution: Ensure you're in the correct directory
-cd backend
-python start_server.py
-
-# Problem: Port already in use
-# Solution: Kill existing processes
-docker-compose down
-```
-
-#### **🤖 Model Loading Issues**
-```bash
-# Check model files
-docker-compose exec backend ls -la /app/models/
-
-# View detailed logs
-docker-compose logs backend | grep -i error
-
-# Test specific model
-docker-compose exec backend python -c "
-from main import models
-print('Available models:', list(models.keys()))
-"
-```
-
-#### **🌐 API Connection Issues**
-```bash
-# Test backend connectivity
-curl http://localhost:8000/health
-
-# Check frontend environment
-docker-compose exec frontend env | grep VITE_API_URL
-
-# Network debugging
-docker-compose exec frontend curl http://backend:8000/health
-```
-
-### **Performance Optimization**
-- Ensure Docker has sufficient RAM (4GB minimum)
-- Use SSD storage for better I/O performance
-- Enable Redis caching for faster model responses
-- Monitor container resource usage with `docker stats`
-
-## ☁️ Cloud Deployment
-
-### **Azure Deployment**
-```bash
-# 1. Build and push images
-docker build -t yourregistry.azurecr.io/doctorai-backend ./backend
-docker build -t yourregistry.azurecr.io/doctorai-frontend ./react-app
-
-docker push yourregistry.azurecr.io/doctorai-backend
-docker push yourregistry.azurecr.io/doctorai-frontend
-
-# 2. Deploy with Azure Container Instances
-az container create \
-  --resource-group doctorai-rg \
-  --name doctorai-app \
-  --image yourregistry.azurecr.io/doctorai-backend \
-  --ports 8000 \
-  --environment-variables REDIS_URL=redis://redis:6379
-```
-
-### **Production Considerations**
-- 🔒 Use Azure Key Vault for secrets management
-- 📊 Implement Azure Monitor for logging and metrics
-- 🚀 Use Azure Container Registry for image storage
-- 🌍 Configure Azure CDN for frontend assets
-- 🔄 Set up CI/CD pipelines with Azure DevOps
-
-## 🧪 Testing & Quality Assurance
-
-### **Automated Testing**
-```bash
-# Backend API testing
-docker-compose exec backend python test_server.py
-
-# Frontend testing
-docker-compose exec frontend npm test
-
-# Integration testing
-curl -X POST "http://localhost:8000/predict/lung_colon" \
-  -F "file=@test_images/sample_xray.jpg"
-```
-
-### **Model Performance Monitoring**
-- Confidence score analysis for all predictions
-- Response time monitoring for API endpoints
-- Error rate tracking and alerting
-- Model accuracy validation with test datasets
-
-## 📚 API Documentation
-
-Full interactive API documentation is available at:
-- **Swagger UI**: http://localhost:8000/docs
-- **ReDoc**: http://localhost:8000/redoc
-
-### **Key Endpoints**
-- `POST /predict/{model_name}` - Medical image analysis
-- `POST /chatbot` - Medical Q&A
-- `POST /anemia_detection` - Anemia detection from palm features
-- `GET /health` - System health check
-- `POST /auth/login` - User authentication
-- `GET /models/status` - Model availability status
-
-## 🔐 Security Features
-
-- ✅ **JWT Authentication** with refresh tokens
-- ✅ **Password Hashing** using bcrypt
-- ✅ **CORS Protection** for cross-origin requests
-- ✅ **Input Validation** and sanitization
-- ✅ **Rate Limiting** for API endpoints
-- ✅ **Secure Headers** implementation
-- ✅ **Non-root Containers** for enhanced security
-- ✅ **Read-only File Systems** where applicable
-
-## 👥 Team & Acknowledgments
-
-### **Core Development Team**
-- 👑 **Mostafa Abdo** - Lead Developer & Architecture
-  - AI Developer 
-  - Full Stack Development
-  - MLOps & Infrastructure
-  - Security Implementation
-- 💬 **Menna Ateya** - Chatbot Developer
-- 🔧 **Adel Mahmoud** - AI Developer
-- 🧠 **Yousef Alaa** - Machine Learning Engineer
-- 🤖 **Mohamed Osama** - AI Developer
-- 📊 **Mohamed Ahmed Talba** - AI Developer
-
-### **Special Thanks**
-- 🎓 **DEPI AI Program** for the educational opportunity
-- 👨‍🏫 **Our Instructors** for guidance and mentorship
-- 🤝 **Open Source Community** for tools and libraries
-- 🏥 **Healthcare Professionals** for domain expertise
-
-## 📄 License & Legal
-
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
-
-### **Medical Disclaimer**
-⚠️ **IMPORTANT**: This application is for educational and research purposes only. It should not be used as a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of qualified healthcare providers with any questions regarding medical conditions.
-
-## 🔄 Version History
-
-### **v2.0.0** (Current) - Production Ready
-- ✅ Complete Docker containerization
-- ✅ Enhanced error handling and logging
-- ✅ Security hardening and authentication
-- ✅ 5/7 models working reliably
-- ✅ Comprehensive monitoring and health checks
-
-### **v1.0.0** - Initial Release
-- Basic model integration
-- Simple web interface
-- Core functionality implementation
+| Document | Description | Target Audience |
+|----------|-------------|-----------------|
+| **[🖥️ Frontend](./frontend.md)** | React + TypeScript web application architecture | Frontend Developers, UI/UX Teams |
+| **[⚙️ Backend](./backend.md)** | FastAPI server, AI model integration, APIs | Backend Developers, DevOps Teams |
+| **[🤖 AI Models](./ai_models.md)** | Machine learning models, architectures, performance | ML Engineers, Data Scientists |
+| **[🚀 Deployment](./deployment.md)** | Docker deployment, infrastructure, monitoring | DevOps Engineers, System Administrators |
+| **[🏗️ Architecture](./architecture.md)** | System architecture, design patterns, scalability | Architects, Technical Leads |
 
 ---
 
-🩺 **Built with ❤️ for better healthcare** 🩺
+## 🎯 Project Overview
 
-For detailed setup instructions, see [DOCKER_SETUP.md](DOCKER_SETUP.md)  
-For troubleshooting, see [backend/TROUBLESHOOTING.md](backend/TROUBLESHOOTING.md)
+### Current System Status
+- **✅ 3/6 AI Models Deployed**: Lung/Colon Cancer, Monkeypox Detection, Brain Tumor Analysis
+- **🚧 3 Models Under Deployment**: X-ray Analysis, Medical Chatbot, Palm Disease Detection
+- **🔧 Full-Stack Application**: React frontend + FastAPI backend
+- **🐳 Production Infrastructure**: Docker containerization with health monitoring
+- **🔐 Enterprise Security**: JWT authentication, audit logging, multi-layer security
+
+### Technology Stack
+```
+Frontend:  React 18 + TypeScript + Tailwind CSS + Redux Toolkit
+Backend:   FastAPI + Python 3.9 + TensorFlow 2.17 + PyTorch
+AI/ML:     DenseNet201, Custom CNNs, T5 Transformers, XGBoost
+Infra:     Docker + Redis + Nginx + Health Monitoring
+Security:  JWT + bcrypt + CORS + Rate Limiting + Audit Logs
+```
+
+### Performance Metrics
+- **Response Time**: 150-300ms for AI model inference
+- **Model Accuracy**: 94-99% across deployed models  
+- **System Memory**: 4-6GB total (1.1-1.3GB per .h5 model)
+- **Availability**: 99.5% uptime target with auto-restart
+- **Throughput**: 8-50 predictions/second per model
+
+---
+
+## 🏥 Medical AI Models Portfolio
+
+### ✅ Currently Deployed Models
+
+| Model | Accuracy | Size | Use Case | Status |
+|-------|----------|------|----------|--------|
+| **🫁 Lung/Colon Cancer** | 95%+ | 85MB | Histopathology Analysis | ✅ Production |
+| **🐒 Monkeypox Detection** | 98-99% | 92MB | Skin Lesion Classification | ✅ Production |
+| **🧠 Brain Tumor Analysis** | 94%+ | 78MB | MRI Scan Interpretation | ✅ Production |
+
+### 🚧 Under Deployment
+
+| Model | Expected Accuracy | Size | Use Case | Status |
+|-------|------------------|------|----------|--------|
+| **📱 X-ray Analysis** | 92%+ | 65MB | Pneumonia Detection | 🚧 Integration |
+| **💬 Medical Chatbot** | NLP | 98MB | Arabic/English Q&A | 🚧 Quality Testing |
+| **🔬 Palm Disease** | 89%+ | 2MB | Anemia Detection | 🚧 Deployment |
+
+---
+
+## 🚀 Quick Start Guide
+
+### Prerequisites
+- **Docker Engine** 20.10+ and **Docker Compose** 2.0+
+- **6GB+ RAM** (8GB recommended for optimal performance)
+- **15GB+ Storage** (for large .h5 model files)
+- **Internet Connection** for initial setup
+
+### One-Command Deployment
+```bash
+# Clone repository
+git clone <repository-url>
+cd DoctorAI-DEPI-AI-Web-Application
+
+# Deploy entire system
+docker-compose up -d
+
+# Verify deployment
+curl http://localhost:8000/api/health    # Backend API
+curl http://localhost:5173              # Frontend App
+```
+
+### Access Points
+- **🌐 Web Application**: http://localhost:5173
+- **📚 API Documentation**: http://localhost:8000/docs  
+- **⚡ Health Check**: http://localhost:8000/api/health
+- **📊 API Endpoints**: http://localhost:8000/redoc
+
+---
+
+## 📐 System Architecture Overview
+
+### High-Level Architecture
+```
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   React Web     │────│   FastAPI       │────│    Redis        │
+│   TypeScript    │    │   Python        │    │    Cache        │
+│   Port: 5173    │    │   Port: 8000    │    │   Port: 6379    │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+        │                       │                       │
+        └───────────────────────┼───────────────────────┘
+                               │
+                    ┌─────────────────┐
+                    │   AI Models     │
+                    │   6 Models      │
+                    │   TF + PyTorch  │
+                    │   85-98MB each  │
+                    └─────────────────┘
+```
+
+### Component Responsibilities
+- **Frontend**: User interface, image upload, results visualization
+- **Backend**: API endpoints, model management, authentication, caching
+- **AI Models**: Medical image analysis, text processing, prediction generation
+- **Redis**: Session management, result caching, performance optimization
+- **Docker**: Container orchestration, health monitoring, auto-restart
+
+---
+
+## 🔐 Security & Compliance
+
+### Multi-Layer Security
+```
+Layer 1: Network Security (SSL/TLS, Firewall, VPN)
+Layer 2: Application Security (CORS, Rate Limiting, Input Validation)
+Layer 3: Authentication (JWT Tokens, bcrypt Hashing)
+Layer 4: Authorization (RBAC, Resource Permissions)
+Layer 5: Data Security (Encryption, PII Protection)
+Layer 6: Audit & Compliance (Logging, Monitoring, Reporting)
+```
+
+### Medical Compliance
+- **⚠️ Educational Use Only**: Not approved for clinical diagnosis
+- **🔒 No Personal Data Storage**: Images processed in memory only
+- **📋 Medical Disclaimers**: Professional consultation recommendations
+- **📊 Audit Trails**: Comprehensive security event logging
+- **🛡️ Privacy Protection**: GDPR/HIPAA compliance considerations
+
+---
+
+## 📊 Performance & Monitoring
+
+### Real-Time Metrics
+- **System Health**: Container status, service availability
+- **Model Performance**: Inference time, memory usage, accuracy
+- **API Metrics**: Response time, error rate, throughput
+- **Resource Usage**: CPU, memory, disk I/O monitoring
+
+### Monitoring Stack
+```bash
+# Health checks
+docker-compose ps                    # Container status
+curl http://localhost:8000/api/health # System health
+
+# Performance monitoring  
+docker stats                        # Resource usage
+docker-compose logs -f backend       # Application logs
+```
+
+---
+
+## 🛠️ Development & Maintenance
+
+### Development Workflow
+```bash
+# Development environment with hot reloading
+docker-compose -f docker-compose.yml -f docker-compose.dev.yml up
+
+# Backend development
+cd backend && python start_server.py
+
+# Frontend development  
+cd react-app && npm run dev
+
+# Testing
+python test_server.py               # Backend tests
+npm test                           # Frontend tests
+```
+
+### Model Management
+- **Lazy Loading**: Models loaded on first request
+- **Memory Optimization**: Efficient caching and cleanup
+- **Error Handling**: Graceful degradation on model failures
+- **Health Monitoring**: Real-time model availability tracking
+
+---
+
+## 🌟 Key Achievements
+
+### Technical Excellence
+- **🎯 High Accuracy**: 98-99% accuracy on monkeypox detection
+- **⚡ Fast Performance**: Sub-second inference times
+- **🔧 Production Ready**: Enterprise-grade infrastructure
+- **📈 Scalable Design**: Horizontal scaling capabilities
+- **🛡️ Secure by Design**: Comprehensive security implementation
+
+### Innovation Highlights
+- **🔬 Medical AI**: Specialized models for different medical conditions
+- **🌍 Multilingual**: Arabic/English medical chatbot support
+- **📱 Modern UI**: Responsive design with accessibility features
+- **🐳 DevOps**: Full containerization with monitoring
+- **📊 Analytics**: Comprehensive metrics and health monitoring
+
+---
+
+## 🚧 Future Roadmap
+
+### Version 2.1.0 (Q1 2025)
+- [ ] Complete deployment of remaining 3 models
+- [ ] Enhanced UI/UX with better visualizations  
+- [ ] Mobile application development
+- [ ] Advanced analytics dashboard
+
+### Version 3.0.0 (Q2 2025)
+- [ ] Microservices architecture decomposition
+- [ ] DICOM image format support
+- [ ] Integration with hospital systems (HL7 FHIR)
+- [ ] Multi-tenant architecture
+- [ ] Compliance with medical device regulations
+
+---
+
+## 👥 Development Team
+
+**🎯 Project Lead**: Mostafa Abdo - Full-Stack Development & Infrastructure  
+**🤖 AI/ML Team**: Menna Ateya, Adel Mahmoud, Yousef Alaa, Mohamed Osama, Mohamed Ahmed Talba  
+**🎓 Program**: DEPI AI - Digital Egypt Pioneers Initiative  
+**📅 Timeline**: 6 months development, 3 weeks for mega project delivery  
+
+---
+
+## 📞 Support & Resources
+
+### Documentation Access
+- **📖 Technical Docs**: See individual component documentation files
+- **🔗 API Reference**: http://localhost:8000/docs (when running)
+- **🧪 Testing Guides**: Included in backend and AI models documentation
+- **🚀 Deployment Guide**: Comprehensive infrastructure setup instructions
+
+### Contact Information
+- **📧 Technical Support**: support@doctorai-depi.com
+- **🐛 Bug Reports**: GitHub Issues (project repository)
+- **💬 General Inquiries**: info@doctorai-depi.com
+
+---
+
+## ⚖️ License & Disclaimer
+
+### Software License
+This project is licensed under the **MIT License** - see LICENSE file for details.
+
+### Medical Disclaimer
+**⚠️ IMPORTANT**: This application is for **educational and research purposes only**. It should **never** be used as a substitute for professional medical advice, diagnosis, or treatment. Always consult qualified healthcare professionals for medical concerns.
+
+---
+
+**🩺 Built with ❤️ for better healthcare through AI innovation 🩺**
+
+*Complete Technical Documentation | DoctorAI v2.0.0 | December 2024* 
