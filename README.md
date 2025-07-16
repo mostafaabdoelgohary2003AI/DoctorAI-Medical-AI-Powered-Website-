@@ -70,37 +70,37 @@ Security:  JWT + bcrypt + CORS + Rate Limiting + Audit Logs
 ## 🚀 Quick Start Guide
 ## 📸 Application Screenshots
 
-### 🏠 Dashboard & Home Interface
+### 🏠 Home Interface
 ![DoctorAI Dashboard](./project%20images/Screenshot%202025-07-16%20084312.png)
-*Main dashboard showing AI model overview and quick access to diagnostic tools*
+*Home Guide*
 
-### 🔐 Authentication & Login
+### 🏠 Home Interface
 ![Login Interface](./project%20images/Screenshot%202025-07-16%20085222.png)
-*Secure user authentication with modern UI design*
+*Modern UI design & supporting dark themes*
 
 ![User Registration](./project%20images/Screenshot%202025-07-16%20085230.png)
-*User registration form with validation and security features*
+*Supporting Dark Themes*
 
-### 🧠 AI Diagnostic Tools
+### 🏠 Home Interface
 ![Brain Tumor Analysis](./project%20images/Screenshot%202025-07-16%20085242.png)
-*Brain tumor detection interface with image upload and analysis results*
+*Supporting Arabic Language*
 
 ![Monkeypox Detection](./project%20images/Screenshot%202025-07-16%20085301.png)
-*Monkeypox detection tool showing image analysis and confidence scores*
+*DoctorAI Features*
 
 ![Lung Cancer Analysis](./project%20images/Screenshot%202025-07-16%20085313.png)
-*Lung and colon cancer detection with detailed diagnostic results*
+*Trusted Tools*
 
-### 💬 Medical Chatbot Interface
+### 🏠 Home Interface
 ![Medical Chatbot](./project%20images/Screenshot%202025-07-16%20085327.png)
-*AI-powered medical consultation chatbot with natural language processing*
+*AI-powered website*
 
 ![Chatbot Conversation](./project%20images/Screenshot%202025-07-16%20085342.png)
-*Interactive medical Q&A with intelligent response generation*
+*Medical Diagnostics*
 
 ### 🔬 Advanced Diagnostics
 ![X-ray Analysis](./project%20images/Screenshot%202025-07-16%20085354.png)
-*X-ray image analysis with AI-powered diagnostic insights*
+*Monkeypox image analysis with AI-powered diagnostic insights*
 
 ![Palm Disease Detection](./project%20images/Screenshot%202025-07-16%20085508.png)
 *Palm disease and anemia detection using XGBoost machine learning*
