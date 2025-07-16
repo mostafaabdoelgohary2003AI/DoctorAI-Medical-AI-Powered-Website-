@@ -45,8 +45,8 @@ DoctorAI is a robust web application that leverages AI to assist with medical di
 | 🧠 tumor | ✅ **Working** | Brain tumor classification | High reliability |
 | 📱 xray | ✅ **Working** | X-ray analysis | Stable performance |
 | 💬 chatbot | ✅ **Working** | Medical Q&A system | NLP-powered |
-| 🦴 bone_fracture | ❌ **Failed** | TensorFlow Lite compatibility issues | Under review |
-| 🔬 skin_cancer | ❌ **Failed** | Deprecated parameter issues | Requires retraining |
+| 🦴 bone_fracture | 🚧 **Under Deployment** | TensorFlow Lite compatibility issues | Under review |
+| 🔬 skin_cancer | 🚧 **Under Deployment** | Deprecated parameter issues | Requires retraining |
 
 ## 📋 Prerequisites
 
