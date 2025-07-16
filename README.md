@@ -247,9 +247,9 @@ npm test                           # Frontend tests
 - **🚀 Deployment Guide**: Comprehensive infrastructure setup instructions
 
 ### Contact Information
-- **📧 Technical Support**: support@doctorai-depi.com
+- **📧 Technical Support**: mostafaabdohelgohary@gmail.com
 - **🐛 Bug Reports**: GitHub Issues (project repository)
-- **💬 General Inquiries**: info@doctorai-depi.com
+- **💬 General Inquiries**: mostafaabdohelgohary@gmail.com
 
 ---
 
