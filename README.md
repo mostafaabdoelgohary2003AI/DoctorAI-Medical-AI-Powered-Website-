@@ -68,6 +68,52 @@ Security:  JWT + bcrypt + CORS + Rate Limiting + Audit Logs
 ---
 
 ## 🚀 Quick Start Guide
+## 📸 Application Screenshots
+
+### 🏠 Dashboard & Home Interface
+![DoctorAI Dashboard](./project%20images/Screenshot%202025-07-16%20084312.png)
+*Main dashboard showing AI model overview and quick access to diagnostic tools*
+
+### 🔐 Authentication & Login
+![Login Interface](./project%20images/Screenshot%202025-07-16%20085222.png)
+*Secure user authentication with modern UI design*
+
+![User Registration](./project%20images/Screenshot%202025-07-16%20085230.png)
+*User registration form with validation and security features*
+
+### 🧠 AI Diagnostic Tools
+![Brain Tumor Analysis](./project%20images/Screenshot%202025-07-16%20085242.png)
+*Brain tumor detection interface with image upload and analysis results*
+
+![Monkeypox Detection](./project%20images/Screenshot%202025-07-16%20085301.png)
+*Monkeypox detection tool showing image analysis and confidence scores*
+
+![Lung Cancer Analysis](./project%20images/Screenshot%202025-07-16%20085313.png)
+*Lung and colon cancer detection with detailed diagnostic results*
+
+### 💬 Medical Chatbot Interface
+![Medical Chatbot](./project%20images/Screenshot%202025-07-16%20085327.png)
+*AI-powered medical consultation chatbot with natural language processing*
+
+![Chatbot Conversation](./project%20images/Screenshot%202025-07-16%20085342.png)
+*Interactive medical Q&A with intelligent response generation*
+
+### 🔬 Advanced Diagnostics
+![X-ray Analysis](./project%20images/Screenshot%202025-07-16%20085354.png)
+*X-ray image analysis with AI-powered diagnostic insights*
+
+![Palm Disease Detection](./project%20images/Screenshot%202025-07-16%20085508.png)
+*Palm disease and anemia detection using XGBoost machine learning*
+
+### 📊 Results & Reports
+![Diagnostic Results](./project%20images/Screenshot%202025-07-16%20085537.png)
+*Comprehensive diagnostic results with confidence scores and recommendations*
+
+![Analysis Summary](./project%20images/Screenshot%202025-07-16%20085610.png)
+*Detailed analysis summary with medical insights and next steps*
+
+![System Overview](./project%20images/Screenshot%202025-07-16%20085649.png)
+*System health monitoring and performance metrics dashboard*
 
 ### Prerequisites
 - **Docker Engine** 20.10+ and **Docker Compose** 2.0+
