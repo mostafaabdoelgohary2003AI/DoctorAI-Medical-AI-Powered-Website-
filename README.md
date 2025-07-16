@@ -146,7 +146,6 @@ curl http://localhost:5173              # Frontend App
 ## 📐 System Architecture Overview
 
 ### High-Level Architecture
-```
 ```mermaid
 graph TB
     A["🌐 React Web<br/>TypeScript<br/>Port: 5173"] --> B["⚙️ FastAPI<br/>Python<br/>Port: 8000"]
@@ -163,7 +162,7 @@ graph TB
     class A frontend
     class B backend
     class C cache
-    class D ai```
+    class D ai
 ```
 
 ### Component Responsibilities
