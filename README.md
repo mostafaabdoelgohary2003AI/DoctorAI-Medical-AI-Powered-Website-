@@ -12,11 +12,11 @@ This documentation provides comprehensive technical coverage of the DoctorAI sys
 
 | Document | Description | Target Audience |
 |----------|-------------|-----------------|
-| **[🖥️ Frontend](./frontend.md)** | React + TypeScript web application architecture | Frontend Developers, UI/UX Teams |
-| **[⚙️ Backend](./backend.md)** | FastAPI server, AI model integration, APIs | Backend Developers, DevOps Teams |
-| **[🤖 AI Models](./ai_models.md)** | Machine learning models, architectures, performance | ML Engineers, Data Scientists |
-| **[🚀 Deployment](./deployment.md)** | Docker deployment, infrastructure, monitoring | DevOps Engineers, System Administrators |
-| **[🏗️ Architecture](./architecture.md)** | System architecture, design patterns, scalability | Architects, Technical Leads |
+| **[🖥️ Frontend](../frontend.md)** | React + TypeScript web application architecture | Frontend Developers, UI/UX Teams |
+| **[⚙️ Backend](../backend.md)** | FastAPI server, AI model integration, APIs | Backend Developers, DevOps Teams |
+| **[🤖 AI Models](../ai_models.md)** | Machine learning models, architectures, performance | ML Engineers, Data Scientists |
+| **[🚀 Deployment](../deployment.md)** | Docker deployment, infrastructure, monitoring | DevOps Engineers, System Administrators |
+| **[🏗️ Architecture](../architecture.md)** | System architecture, design patterns, scalability | Architects, Technical Leads |
 
 ---
 
